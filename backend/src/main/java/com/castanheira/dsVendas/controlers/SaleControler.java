@@ -1,5 +1,7 @@
 package com.castanheira.dsVendas.controlers;
 
+import com.castanheira.dsVendas.dto.SaleSuccessDTO;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.castanheira.dsVendas.dto.SaleDTO;
+import com.castanheira.dsVendas.dto.SaleSumDTO;
 import com.castanheira.dsVendas.service.SaleService;
 
 @RestController
@@ -25,4 +28,15 @@ public class SaleControler {
 
 	}
 
+	@GetMapping(value = "/amount-by-seller")
+	public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
+		List<SaleSumDTO> list = service.amountGroupedBySeller();
+		return ResponseEntity.ok(list);
+	}
+
+	@GetMapping(value = "/success-by-seller")
+	public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
+		List<SaleSuccessDTO> list = service.successGroupedBySeller();
+		return ResponseEntity.ok(list);
+	}
 }
