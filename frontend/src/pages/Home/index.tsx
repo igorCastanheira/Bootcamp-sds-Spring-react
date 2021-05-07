@@ -7,7 +7,7 @@ function Home() {
         <>
           
             <NavBar />
-            <div>
+           
             <div className="container">
                 <div className="jumbotron">
                     <h1 className="display-4">DSVendas</h1>
@@ -19,9 +19,10 @@ function Home() {
                     </Link>
                     
                 </div>
-                </div>
+                
             </div>
-            <Footer />
+            <div> <Footer /></div>
+           
            
            
            

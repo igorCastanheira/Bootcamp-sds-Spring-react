@@ -19,7 +19,13 @@ html, body {
 }
 
 .footer {
-    flex-shrink: 0;
+    border-top: 1px solid #333;
+  bottom: 0;
+  left: 0;
+  
+  position: fixed;
+  width: 100%;
+    flex-shrink: 1;
     text-align: center;
 }
 
